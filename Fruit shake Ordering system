@@ -1,0 +1,129 @@
+//Fruit shake Ordering system
+#include <iostream>
+#include <iomanip>
+
+using namespace std;
+
+int main() {
+    string choice, choices, drink, size, decide;
+    float payment;
+    int  SMALL = 30, MEDIUM = 50, LARGE = 70, amount = 0;
+    // INTRODUCTION
+    cout << "Welcome to TATANG Fruit Shake " << endl;
+    cout << endl;
+    cout << endl;
+    string Product = "MANGO SHAKE, APPLE SHAKE, DURIAN SHAKE, BUKO SHAKE, LEMON SHAKE";
+    cout << "Do you want to see our product? (yes/no) " << endl;
+    cin >> choice;
+
+    if (choice == "yes") {
+        cout << Product << endl;
+        cout << endl;
+        // PROCESS
+        cout << "Choose a drink: " << endl;
+        cin >> drink;
+        //DRINKS
+        if (drink == "MANGOSHAKE" || drink == "APPLESHAKE" || drink == "DURIANSHAKE" ||
+            drink == "BUKOSHAKE" || drink == "LEMONSHAKE") {
+            cout << endl;
+            cout << "CHOOSE OUR SIZE HERE => SMALL, MEDIUM, LARGE" << endl;
+            cin >> size;
+        }
+            //SIZE
+            if (size == "SMALL" || size == "MEDIUM" || size == "LARGE") {
+                cout << endl;
+                //QUANTITY
+                cout << "HOW MANY =>" << endl;
+                cin >> amount;
+            }
+            if (amount == amount) {
+                cout << "Type S-small M-medium L-large if complete" << endl;
+                cin >> decide;
+            }
+            if (decide == "S") {
+                int computeS = amount * SMALL;
+                //TOTAL
+                cout << "                             DRINK    SIZE  QUANTITY  AMOUNT   " << endl;
+                cout << "THE TOTAL AMOUNT OF YOUR: " << " " << drink << " " << size << " " << " " << " " << amount << " " << " " << " " << computeS << " Pesos" << endl;
+              //PAYMENT 
+                do {
+                    cout << "Enter your payment" << endl;
+                    cin >> payment;   
+                    payment = tolower(payment);
+                    if (payment >= computeS) {
+                        cout << "Here's your change:" << payment - computeS << endl;
+                        cout << "thank you come again: " << endl;
+                    }
+                    else if (payment <= computeS) {
+                        cout << "insufficient money" << endl;
+                    }
+                    else {
+                        cout << "Invalid choice. Exiting the program..." << endl;
+                        break;
+                    }
+
+
+                } while (payment <= computeS);
+            }
+            else  if (decide == "M") {
+                int computeM = amount * MEDIUM;
+                cout << "                             DRINK    SIZE  QUANTITY  AMOUNT   " << endl;
+                cout << "THE TOTAL AMOUNT OF YOUR: " << " " << drink << " " << size << " " << " " << " " << amount << " " << " " << " " << computeM << " Pesos" << endl;
+                do {
+                    cout << "Enter your payment" << endl;
+                    cin >> payment;
+
+                    // Convert input to lowercase to make it case-insensitive
+                    payment = tolower(payment);
+
+                    // If-else statement to determine whether to continue or end the loop
+                    if (payment >= computeM) {
+                        cout << "Here's your change:" << payment - computeM << endl;
+                        cout << "thank you come again: " << endl;
+                    }
+                    else if (payment <= computeM) {
+                        cout << "insufficient money" << endl;
+                    }
+                    else {
+                        cout << "Invalid choice. Exiting the program..." << endl;
+                        break;
+                    }
+
+
+                } while (payment <= computeM);
+            }
+
+            else if (decide == "L") {
+                int computeL = amount * LARGE;
+                cout << "                             DRINK    SIZE  QUANTITY  AMOUNT   " << endl;
+                cout << "THE TOTAL AMOUNT OF YOUR: " << " " << drink << " " << size << " " << " " << " " << amount << " " << " " << " " << computeL << " Pesos" << endl;
+                do {
+                    cout << "Enter your payment" << endl;
+                    cin >> payment;
+
+                    // Convert input to lowercase to make it case-insensitive
+                    payment = tolower(payment);
+
+                    // If-else statement to determine whether to continue or end the loop
+                    if (payment >= computeL) {
+                        cout << "Here's your change:" << payment - computeL << endl;
+                        cout << "thank you come again: " << endl;
+                    }
+                    else if (payment <= computeL) {
+                        cout << "insufficient money" << endl;
+                    }
+                    else {
+                        cout << "Invalid choice. Exiting the program..." << endl;
+                        break;
+                    }
+
+
+                } while (payment <= computeL);
+            }
+        }
+        else if (choice == "no") {
+            cout << "Thank you, come again." << endl;
+
+        }
+        return 0;
+    }
